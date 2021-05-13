@@ -1,0 +1,34 @@
+<html>
+    <header>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <title>File upload</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/site.css" />
+        <link rel="stylesheet" href="css/ShowPdf.css" />
+    </header>
+    <body>
+        <div id="app">
+            <form class="mt-5">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <p>Upload file using this form:</p>
+                        <input type="file" onchange="previewFile(event)" class="py-3"/>
+                        <button type="submit" value="Extract" class="submitCoordinates ml-3 btn btn-ifo">Extract</button>
+                        <div id="canvas-wrapper">
+                            <canvas id="canvas" width="400" height="519"></canvas>
+                            <canvas id="pdf-canvas" width="400"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <div class="col-md-10">
+                        
+                    </div>
+                </div>
+            </form>
+          </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.228/pdf.min.js"></script>
+    <script src="js/site.js"></script>
+</html>

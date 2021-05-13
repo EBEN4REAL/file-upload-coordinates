@@ -1,0 +1,23 @@
+﻿
+#canvas-wrapper {
+    position: relative;
+    width: 400px;
+    height: 520px;
+}
+
+#canvas, #pdf-canvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid rgba(0,0,0,0.8);
+    box-sizing: border-box;
+}
+
+#pdf-canvas {
+    z-index: 0;
+}
+
+#canvas {
+    z-index: 1;
+    
+}
