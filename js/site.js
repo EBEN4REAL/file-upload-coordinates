@@ -128,7 +128,7 @@ function previewFile(event) {
 }
 function submitCoordinates() {
     const data = {
-        
+
     }
     fetch('https://api.github.com/gists', {
         method: 'post',
@@ -136,7 +136,7 @@ function submitCoordinates() {
     }).then(function(response) {
         return response.json();
     }).then(function(data) {
-        ChromeSamples.log('Created Gist:', data.html_url);
+        ChromeSamples.log(data);
     });
 }
 
