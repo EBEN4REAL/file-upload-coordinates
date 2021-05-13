@@ -32,7 +32,6 @@ function draw() {
     ctx.linewidth = 1;
     ctx.fillRect(rect.startX, rect.startY, rect.w, rect.h);
     ctx.stroke();
-    console.log(rect)
     
 }
 
@@ -53,16 +52,13 @@ function mouseMove(e) {
         rect.h = (e.pageY - this.offsetTop) - rect.startY;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         draw();
-        // const pixelsArr = rect.split(" ")
-        // const ptArr = pixelsArr.map(px => {
-        //     const pt = (px * 96) / 72
-        //     return {
-        //         pt
-        //     }
-        // })
-        // console.log("PT EQUIVALENT")
-        // console.log(ptArr)
-        // console.log(rect.startX, rect.startY, rect.w, rect.h);
+        console.log(rect.startX, rect.startY, rect.w, rect.h)
+        rect.startX = (( rect.startX * 96) / 72).toFixed(2)
+        rect.startY = (( rect.startY * 96) / 72).toFixed(2)
+        rect.w = (( rect.w * 96) / 72).toFixed(2)
+        rect.h = (( rect.h * 96) / 72).toFixed(2)
+        
+        console.log(rect.startX, rect.startY, rect.w, rect.h);
     }
 }
 
@@ -73,7 +69,6 @@ async function showPDF(pdf_url) {
     // get handle of pdf document
     try {
         _PDF_DOC = await pdfjsLib.getDocument({ url: pdf_url });
-        console.log(_PDF_DOC)
     }
     catch (error) {
         alert(error.message);
@@ -132,14 +127,17 @@ function previewFile(event) {
 
 }
 function submitCoordinates() {
-    // fetch('https://api.github.com/gists', {
-    //     method: 'post',
-    //     body: JSON.stringify(opts)
-    // }).then(function(response) {
-    //     return response.json();
-    // }).then(function(data) {
-    //     ChromeSamples.log('Created Gist:', data.html_url);
-    // });
+    const data = {
+        
+    }
+    fetch('https://api.github.com/gists', {
+        method: 'post',
+        body: JSON.stringify(opts)
+    }).then(function(response) {
+        return response.json();
+    }).then(function(data) {
+        ChromeSamples.log('Created Gist:', data.html_url);
+    });
 }
 
 
